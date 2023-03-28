@@ -57,6 +57,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.5"
+  equatable:
+    dependency: transitive
+    description:
+      name: equatable
+      sha256: c2b87cb7756efdf69892005af546c56c0b5037f54d2a88269b4f347a505e3ca2
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.5"
   fake_async:
     dependency: transitive
     description:
@@ -168,6 +176,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.6.5"
+  json_annotation:
+    dependency: transitive
+    description:
+      name: json_annotation
+      sha256: c33da08e136c3df0190bd5bbe51ae1df4a7d96e7954d1d7249fea2968a72d317
+      url: "https://pub.dev"
+    source: hosted
+    version: "4.8.0"
   location:
     dependency: "direct main"
     description:
@@ -421,6 +437,22 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.0"
+  yandex_geocoder:
+    dependency: "direct main"
+    description:
+      name: yandex_geocoder
+      sha256: "9421fc9bc0c146348106c61d6e842ee86404816c81aa68b72567dcd7fff506c0"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.1.0"
+  yandex_mapkit:
+    dependency: "direct main"
+    description:
+      name: yandex_mapkit
+      sha256: ab4054e41ad84b19192287c3d97060f1eef1cc81431bf6a8ae36e5b522b520a0
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.2.0"
 sdks:
-  dart: ">=2.18.0 <3.0.0"
+  dart: ">=2.19.2 <3.0.0"
   flutter: ">=3.3.0"
