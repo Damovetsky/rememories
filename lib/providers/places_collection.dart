@@ -45,6 +45,11 @@ class PlacesCollection with ChangeNotifier {
     });
   }
 
+  Future<void> removePlace(String id) async {
+    _items.removeWhere((element) => element.id == id);
+    DBHelper.removeItem('user_places', id);
+  }
+
   Future<void> fetchAndSetPlaces() async {
     final placesData = await DBHelper.getData('user_places');
     _items = placesData

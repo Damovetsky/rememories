@@ -48,19 +48,61 @@ class PlacesListScreen extends StatelessWidget {
                         ? ch
                         : ListView.builder(
                             itemCount: placesCollection.items.length,
-                            itemBuilder: (context, i) => ListTile(
-                              leading: CircleAvatar(
-                                backgroundImage:
-                                    FileImage(placesCollection.items[i].image),
+                            itemBuilder: (context, i) => Dismissible(
+                              key: ValueKey(placesCollection.items[i].id),
+                              direction: DismissDirection.endToStart,
+                              background: Container(
+                                color: Theme.of(context).colorScheme.error,
+                                child: Icon(
+                                  Icons.delete,
+                                  size: 40,
+                                  color: Colors.white,
+                                ),
+                                alignment: Alignment.centerRight,
+                                padding: const EdgeInsets.only(right: 20),
                               ),
-                              title: Text(placesCollection.items[i].title),
-                              subtitle: Text(
-                                  placesCollection.items[i].location.address),
-                              onTap: () {
-                                Navigator.of(context).pushNamed(
-                                    PlaceDetailScreen.routeName,
-                                    arguments: placesCollection.items[i].id);
+                              onDismissed: (direction) {
+                                Provider.of<PlacesCollection>(context,
+                                        listen: false)
+                                    .removePlace(placesCollection.items[i].id);
                               },
+                              confirmDismiss: (direction) => showDialog(
+                                context: context,
+                                builder: (context) => AlertDialog(
+                                  title: Text('Are you sure?'),
+                                  content:
+                                      Text('Do you want to delete this place?'),
+                                  actions: [
+                                    TextButton(
+                                      onPressed: () =>
+                                          Navigator.of(context).pop(false),
+                                      child: Text('No'),
+                                    ),
+                                    TextButton(
+                                      onPressed: () =>
+                                          Navigator.of(context).pop(true),
+                                      child: Text('Yes'),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              child: ListTile(
+                                leading: CircleAvatar(
+                                  radius: 40,
+                                  backgroundImage: FileImage(
+                                    placesCollection.items[i].image,
+                                  ),
+                                ),
+                                horizontalTitleGap: 5,
+                                title: Text(placesCollection.items[i].title),
+                                subtitle: Text(
+                                    placesCollection.items[i].location.address),
+                                onTap: () {
+                                  Navigator.of(context).pushNamed(
+                                      PlaceDetailScreen.routeName,
+                                      arguments: placesCollection.items[i].id);
+                                },
+                              ),
                             ),
                           ),
               ),
