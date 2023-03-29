@@ -29,6 +29,18 @@ class _MapScreenState extends State<MapScreen> {
     super.dispose();
   }
 
+  @override
+  void initState() {
+    if (!widget.isSelecting) {
+      _placeMarker(
+        Point(
+            latitude: widget.initialLocation.latitude,
+            longitude: widget.initialLocation.longitude),
+      );
+    }
+    super.initState();
+  }
+
   void _placeMarker(Point position) {
     final mapObject = PlacemarkMapObject(
       mapId: MapObjectId('Location marker'),

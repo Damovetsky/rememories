@@ -5,6 +5,7 @@ import './providers/places_collection.dart';
 
 import './screens/places_list_screen.dart';
 import './screens/add_place_screen.dart';
+import './screens/place_detail_screen.dart';
 
 void main() => runApp(MyApp());
 
@@ -21,6 +22,7 @@ class MyApp extends StatelessWidget {
         home: PlacesListScreen(),
         routes: {
           AddPlaceScreen.routeName: (context) => AddPlaceScreen(),
+          PlaceDetailScreen.routeName: (context) => PlaceDetailScreen(),
         },
       ),
     );

@@ -13,6 +13,10 @@ class PlacesCollection with ChangeNotifier {
     return [..._items];
   }
 
+  Place findById(String id) {
+    return _items.firstWhere((element) => element.id == id);
+  }
+
   Future<void> addPlace(
     String pickedTitle,
     File pickedImmage,
