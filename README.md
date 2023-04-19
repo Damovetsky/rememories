@@ -1,16 +1,5 @@
 # rememories
 
-A new Flutter project.
+A study project of a flutter mobile app that allows you to store in memory all the great places you visited.
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+It utilizes yandex mapkit package to pick coordinates for your place. It also access device native features to take pictures and store them and other information in local SQLite database.

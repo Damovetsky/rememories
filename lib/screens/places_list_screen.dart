@@ -87,10 +87,13 @@ class PlacesListScreen extends StatelessWidget {
                                 ),
                               ),
                               child: ListTile(
-                                leading: CircleAvatar(
-                                  radius: 40,
-                                  backgroundImage: FileImage(
-                                    placesCollection.items[i].image,
+                                leading: Hero(
+                                  tag: placesCollection.items[i].id,
+                                  child: CircleAvatar(
+                                    radius: 40,
+                                    backgroundImage: FileImage(
+                                      placesCollection.items[i].image,
+                                    ),
                                   ),
                                 ),
                                 horizontalTitleGap: 5,

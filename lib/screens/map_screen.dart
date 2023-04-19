@@ -24,12 +24,6 @@ class _MapScreenState extends State<MapScreen> {
   Point _pickedLocation;
 
   @override
-  void dispose() {
-    _mapController.dispose();
-    super.dispose();
-  }
-
-  @override
   void initState() {
     if (!widget.isSelecting) {
       _placeMarker(
